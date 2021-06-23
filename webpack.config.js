@@ -2,7 +2,7 @@ const webpack = require("webpack");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  context: __dirname + "/src",
+  context: `${__dirname}/src`,
   mode: "development",
   entry: "/index.js",
   resolve: {
@@ -12,7 +12,7 @@ module.exports = {
     extensions: ["*", ".js", ".jsx"],
   },
   output: {
-    path: "/dist/",
+    path: `${__dirname}/dist/`,
     filename: "bundle.js",
   },
   devServer: {
