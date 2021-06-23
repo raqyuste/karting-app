@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import service from "/services";
-import "./index.css";
+import "./index.scss";
 
-import Avatar from '/components/Avatar';
+import Avatar from "/components/Avatar";
 import Races from "./Races";
 
 const Pilot = () => {
@@ -23,11 +23,7 @@ const Pilot = () => {
       </Link>
       <div className="info">
         <div className="info__main">
-          <Avatar
-            height="64px"
-            width="64px"
-            src={pilot.picture}
-          ></Avatar>
+          <Avatar height={64} width={64} src={pilot.picture}></Avatar>
           <div>
             <h2 className="name">
               {`${pilot.name}, `}

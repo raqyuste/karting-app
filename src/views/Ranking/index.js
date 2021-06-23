@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import service from "/services";
 import "./index.scss";
 
-import Avatar from '/components/Avatar';
+import Avatar from "/components/Avatar";
 
 const Ranking = () => {
   const [pilots, setPilots] = useState([]);
@@ -29,7 +29,7 @@ const Ranking = () => {
             >
               <div className="pilots-list__column">{pilot.position}.</div>
               <div className="pilots-list__column">
-                <Avatar height="32" width="32" src={pilot.picture}></Avatar>
+                <Avatar height={32} width={32} src={pilot.picture}></Avatar>
               </div>
               <div className="pilots-list__column">
                 <div className="pilots-list__name">{pilot.name}</div>

@@ -1,7 +1,8 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./index.scss";
 
-const Races = ({races}) => {
+const Races = ({ races }) => {
   return (
     <div className="races">
       {races?.map((race) => (
@@ -15,6 +16,10 @@ const Races = ({races}) => {
       ))}
     </div>
   );
+};
+
+Races.propTypes = {
+  races: PropTypes.array,
 };
 
 export default Races;

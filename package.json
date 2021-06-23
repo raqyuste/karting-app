@@ -7,14 +7,8 @@
     "lint:fix": "eslint . --fix",
     "start": "webpack serve --node-env=development",
     "test": "jest --verbose --coverage",
-    "build": "webpack --mode production",
+    "build": "webpack --mode production --node-env=production",
     "help": "webpack --help"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.14.5",
