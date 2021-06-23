@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import service from "/services";
 import "./index.scss";
-
-import Avatar from "/components/Avatar";
+import List from "./List";
 
 const Ranking = () => {
   const [pilots, setPilots] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     service.getPilots().then((items) => {
       setPilots(items);
+      setLoading(false);
     });
   }, []);
 
@@ -19,29 +19,7 @@ const Ranking = () => {
       <div>
         <h1 className="ranking__title">World Kart Championship</h1>
       </div>
-      <div className="pilots-list">
-        {pilots.map((pilot) => {
-          return (
-            <Link
-              to={`/pilot/${pilot._id}`}
-              key={pilot._id}
-              className="pilots-list__row"
-            >
-              <div className="pilots-list__column">{pilot.position}.</div>
-              <div className="pilots-list__column">
-                <Avatar height={32} width={32} src={pilot.picture}></Avatar>
-              </div>
-              <div className="pilots-list__column">
-                <div className="name">{pilot.name}</div>
-                <div className="team">{pilot.team}</div>
-              </div>
-              <div className="pilots-list__column">
-                {Math.round(pilot.points)} points
-              </div>
-            </Link>
-          );
-        })}
-      </div>
+      <List pilots={pilots} loading={loading} />
     </div>
   );
 };

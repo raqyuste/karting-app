@@ -1,0 +1,40 @@
+.pilots-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 75vh;
+
+  .pilots-list__row {
+    vertical-align: middle;
+    display: grid;
+    grid-template-columns: auto auto 1fr auto;
+  
+    .pilots-list__column {
+      align-self: center;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      padding: 5px;
+  
+      &:first-child {
+        padding-left: 10px;
+      }
+      
+    }
+  }
+}
+
+.name {
+  font-size:larger;
+}
+
+.team {
+  font-size: smaller;
+}
+
+@media (max-width: 800px) {
+  .pilots-list{
+    flex-wrap: nowrap;
+    overflow: scroll;
+  }
+}
