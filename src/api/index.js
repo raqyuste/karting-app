@@ -1,5 +1,5 @@
 import { Server } from "miragejs";
-import { populatePilotsWithPositions } from "./processData";
+import { populatePilotsWithPositions } from "./dataProcessor";
 
 if (process.env.NODE_ENV === "development") {
   const data = require("./data.json");
