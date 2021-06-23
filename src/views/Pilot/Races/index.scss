@@ -1,0 +1,39 @@
+.races {
+  background: #1d2730;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 20px
+}
+
+.race {
+  margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  border-bottom: 1px solid;
+  padding: 10px;
+
+  .race__name {
+    margin: 0;
+  }
+  
+  .race__position {
+    margin: 0;
+  }
+  
+  .race__time {
+    margin: 0;
+    align-self: end;
+  }
+}
+
+@media (max-width: 800px) {
+  .races {
+    flex-wrap: nowrap;
+    overflow: scroll;
+  }
+}

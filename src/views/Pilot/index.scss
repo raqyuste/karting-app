@@ -1,0 +1,47 @@
+.pilot {
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.info {
+  background: #1d2630;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 50%;
+
+  .info__main{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .info__extra {
+    padding-left: 84px;
+  }
+}
+
+.name{
+  margin: 0;
+}
+
+.age {
+  font-weight: normal;
+  font-size: initial;
+}
+
+.team{
+  color: #565f67;
+}
+
+h3 {
+  font-weight: normal;
+  margin: 0;
+}
+
+@media (max-width: 800px) {
+  .info {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
