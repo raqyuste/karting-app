@@ -17,7 +17,7 @@ const Ranking = () => {
   return (
     <div className="ranking">
       <div>
-        <h1 className="title">World Kart Championship</h1>
+        <h1 className="ranking__title">World Kart Championship</h1>
       </div>
       <div className="pilots-list">
         {pilots.map((pilot) => {
@@ -32,8 +32,8 @@ const Ranking = () => {
                 <Avatar height={32} width={32} src={pilot.picture}></Avatar>
               </div>
               <div className="pilots-list__column">
-                <div className="pilots-list__name">{pilot.name}</div>
-                <div className="pilots-list__team">{pilot.team}</div>
+                <div className="name">{pilot.name}</div>
+                <div className="team">{pilot.team}</div>
               </div>
               <div className="pilots-list__column">
                 {Math.round(pilot.points)} points

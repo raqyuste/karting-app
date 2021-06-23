@@ -2,7 +2,7 @@
   height: 100vh;
 }
 
-.title {
+.ranking__title {
   display: inline-block;
 }
 
@@ -11,37 +11,36 @@
   flex-direction: column;
   flex-wrap: wrap;
   height: 80vh;
+
+  .pilots-list__row {
+    vertical-align: middle;
+    display: grid;
+    grid-template-columns: auto auto 1fr auto;
+    margin: 5px;
+    background: #1d2630;
+    border-radius: 10px;
+    cursor: pointer;
+  
+    .pilots-list__column {
+      align-self: center;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      padding: 5px;
+  
+      &:first-child {
+        padding-left: 10px;
+      }
+      
+    }
+  }
 }
 
-.pilots-list 
-
-.pilots-list__row {
-  vertical-align: middle;
-  display: grid;
-  grid-template-columns: auto auto 1fr auto;
-  margin: 5px;
-  background: #1d2630;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.pilots-list_row .pilots-list_column {
-  align-self: center;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  padding: 5px;
-}
-
-.pilots-list__column:first-child {
-  padding-left: 10px;
-}
-
-.pilots-list__name {
+.name {
   font-size:larger;
 }
 
-.pilots-list__team {
+.team {
   font-size: smaller;
 }
 

@@ -1,0 +1,66 @@
+
+.loading {
+    position: absolute;
+    pointer-events: none;
+  }
+  
+  .car {
+    height: 64px;
+    width: 64px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -32px;
+    z-index: 2;
+  }
+  
+  .animation-on .car{
+    transform: translateX(100vw);
+    transition: transform 2000ms ease-in-out;
+  }
+  
+  .upper-curtain {
+    background-color: #2b323b;
+    height: 50vh;
+    width: 100vw;
+    vertical-align: super;
+  }
+  
+  
+  .bottom-curtain {
+    background-color: #2b323b;
+    height: 50vh;
+    width: 100vw;
+    vertical-align: sub;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .animation-on .upper-curtain {
+      animation: upper-movement 500ms linear;
+      animation-delay: 2000ms;
+      animation-fill-mode: forwards;
+    }
+    .animation-on .bottom-curtain {
+      animation: bottom-movement 500ms linear;
+      animation-delay: 2000ms;
+      animation-fill-mode: forwards;
+    }
+  }
+  
+  @keyframes upper-movement {
+    from { 
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-100%);
+    }
+  }
+  
+  @keyframes bottom-movement {
+    from { 
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(100%);
+    }
+  }
