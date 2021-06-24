@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
 import Row from "../Row";
 
 const PLACEHOLDER_ROWS = 3;
@@ -20,7 +19,7 @@ const Loading = () => {
   return [...Array(PLACEHOLDER_ROWS)].map((row, index) => (
     <Row
       key={index}
-      className={highlightedRow === index ? "row--higlighted" : ""}
+      className={highlightedRow === index ? "row--highlighted" : ""}
     />
   ));
 };

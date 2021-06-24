@@ -1,14 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./api";
-import Loader from "./components/Loader";
+import LoaderScreen from "./components/LoaderScreen";
 import "./index.scss";
 import Router from "./router";
 
 ReactDOM.render(
   <React.StrictMode>
     <div className="app">
-      <Loader />
+      <LoaderScreen />
       <Router />
     </div>
   </React.StrictMode>,

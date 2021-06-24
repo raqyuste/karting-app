@@ -5,13 +5,20 @@ import List from "./List";
 
 const Ranking = () => {
   const [pilots, setPilots] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    service.getPilots().then((items) => {
-      setPilots(items);
-      setLoading(false);
-    });
+    service
+      .getPilots()
+      .then((items) => {
+        setPilots(items);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        setError(error.message);
+        setIsLoading(false);
+      });
   }, []);
 
   return (
@@ -19,7 +26,7 @@ const Ranking = () => {
       <div>
         <h1 className="ranking__title">World Kart Championship</h1>
       </div>
-      <List pilots={pilots} loading={loading} />
+      <List pilots={pilots} isLoading={isLoading} error={error} />
     </div>
   );
 };

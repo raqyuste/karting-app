@@ -7,11 +7,13 @@ import Avatar from "/components/Avatar";
 import Row from "../Row";
 import Loading from "../Loading";
 
-const List = ({ pilots, loading }) => {
+const List = ({ pilots, isLoading, error }) => {
   return (
     <div className="pilots-list">
-      {loading ? (
+      {isLoading ? (
         <Loading></Loading>
+      ) : error ? (
+        <p>{error}</p>
       ) : (
         pilots.map((pilot) => {
           return (
@@ -39,7 +41,8 @@ const List = ({ pilots, loading }) => {
 
 List.propTypes = {
   pilots: PropTypes.array,
-  loading: PropTypes.bool,
+  isLoading: PropTypes.bool,
+  error: PropTypes.string,
 };
 
 export default List;

@@ -1,17 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import car from "/assets/car.svg";
 import "./index.scss";
 
 const { useState } = React;
 
 const LOADING_ANIMATION = {
-  ON: "animation-on",
-  OFF: "animation-off",
+  ON: "loading--animation-on",
 };
 
-const Loader = () => {
-  const [animation = LOADING_ANIMATION.OFF, setAnimation] = useState(true);
-  setTimeout(() => setAnimation(LOADING_ANIMATION.ON), 500);
+const LoaderScreen = () => {
+  const [animation, setAnimation] = useState("");
+
+  useEffect(() => {
+    setTimeout(() => setAnimation(LOADING_ANIMATION.ON), 500);
+  }, []);
 
   return (
     <div className={`loading ${animation}`}>
@@ -22,4 +24,4 @@ const Loader = () => {
   );
 };
 
-export default Loader;
+export default LoaderScreen;

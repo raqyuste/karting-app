@@ -2,10 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./index.scss";
 
-const Races = ({ races }) => {
+const Races = ({ races = [] }) => {
   return (
     <div className="races">
-      {races?.map((race) => (
+      {races.map((race) => (
         <div className="race" key={race.name}>
           <div>
             <h3 className="race__name">{race.name}</h3>
