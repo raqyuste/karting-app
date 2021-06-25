@@ -32,7 +32,6 @@ jobs:
       run: npm run build:dev
 
     - name: 🗜 Deploy artifacts
-      if: github.event_name == 'push' && github.ref == 'refs/heads/master'
       uses: actions/upload-artifact@v2
       with:
         name: dist
@@ -40,7 +39,6 @@ jobs:
    
 
   gh-pages:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     name: 📄 GitHub Pages
     runs-on: ubuntu-latest
     needs: build
