@@ -1,4 +1,4 @@
-import http from "/http";
+import http from "./http";
 
 const getPilots = async () => {
   const response = await http.get("/api/pilots/");

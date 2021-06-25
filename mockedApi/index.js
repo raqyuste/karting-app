@@ -1,13 +1,11 @@
 import { Server } from "miragejs";
-import { populatePilotsWithPositions } from "./dataProcessor";
+import data from "./data";
 
 if (process.env.NODE_ENV === "development") {
-  const data = require("./data.json");
-
   new Server({
     seeds({ db }) {
       db.loadData({
-        pilots: populatePilotsWithPositions(data),
+        pilots: data.get(),
       });
     },
 

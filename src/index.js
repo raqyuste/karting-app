@@ -1,16 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./api";
-import LoaderScreen from "./components/LoaderScreen";
+import "../mockedApi";
+
 import "./index.scss";
-import Router from "./router";
+
+import App from "./App";
+import { DisplayModeContextProvider } from "./context/DisplayModeContext";
 
 ReactDOM.render(
   <React.StrictMode>
-    <div className="app">
-      <LoaderScreen />
-      <Router />
-    </div>
+    <DisplayModeContextProvider>
+      <App />
+    </DisplayModeContextProvider>
   </React.StrictMode>,
   document.querySelector("karting-app")
 );

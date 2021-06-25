@@ -1,0 +1,26 @@
+.app {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  box-sizing: border-box;
+  margin: 0 10vw;
+}
+
+.display-button {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  cursor: pointer;
+  padding: 5px 5px 0px 5px;
+  border-radius: 10px;
+
+  &.display-button--active {
+    background: #575e68;
+  }
+}
+
+@media (max-width: 800px) {
+  .app {
+    margin: 10px;
+  }
+}

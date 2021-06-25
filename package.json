@@ -6,7 +6,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "start": "webpack serve --node-env=development",
-    "test": "jest --watch",
+    "test": "jest --watchAll",
     "build": "webpack --mode production --node-env=production",
     "build:dev": "webpack --node-env=production",
     "help": "webpack --help"

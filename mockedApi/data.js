@@ -1,8 +1,14 @@
+const data = require("./data.json");
+
 const timeToSeconds = (time) => {
   const arrayTime = time.split(":");
   const seconds = +arrayTime[0] * 3600 + +arrayTime[1] * 60 + +arrayTime[2];
 
   return seconds;
+};
+
+const getPointsByPosition = (position, numberOfPilots) => {
+  return numberOfPilots / position;
 };
 
 const getPilotTimesByRace = (pilots) => {
@@ -51,14 +57,15 @@ const getPilotsWithRacingPositions = (pilots) => {
   });
 };
 
-export const populatePilotsWithPositions = (pilots) => {
+const populatePilotsWithPositions = (pilots) => {
   const pilotsWithRacingPositions = getPilotsWithRacingPositions(pilots);
 
   const numberOfPilots = pilots.length;
   const pilotWithPoints = pilotsWithRacingPositions.map((pilot) => ({
     ...pilot,
     points: pilot.races.reduce(
-      (points, { position }) => points + numberOfPilots / position,
+      (points, { position }) =>
+        points + getPointsByPosition(position, numberOfPilots),
       0
     ),
   }));
@@ -67,3 +74,15 @@ export const populatePilotsWithPositions = (pilots) => {
     .sort(({ points: firstEl }, { points: secondEl }) => secondEl - firstEl)
     .map((pilot, index) => ({ ...pilot, position: index + 1 }));
 };
+
+class Data {
+  constructor() {
+    this.data = populatePilotsWithPositions(data);
+  }
+
+  get() {
+    return this.data;
+  }
+}
+
+export default new Data();

@@ -8,6 +8,9 @@
     vertical-align: middle;
     display: grid;
     grid-template-columns: auto auto 1fr auto;
+    background: #1d2630;
+    border-radius: 10px;
+    margin: 5px;
   
     .pilots-list__column {
       align-self: center;
