@@ -1,5 +1,6 @@
 # karting-app
 World Kart Championship
+https://raqyuste.github.io/karting-app
 
 ## Installing
 ```sh
